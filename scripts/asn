@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This script shows the company name a BGP ASN belongs to.
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $# -lt 1 ]] || [[ $1 = *h* ]]; then
+    echo "Run as: $(basename $0) <ASN>"
+    echo "<ASN> is the AS number in question, e.g., 'asn 15169'"
+    exit
+fi
+
+asn_number=$1
+curl -s https://bgpstuff.net/asname/$asn_number
