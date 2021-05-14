@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# This script shows the total number of internet routes
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $1 == *h* ]]; then
+    echo "Run as: $(basename $0)"
+    echo "Run without arguments, e.g., bgptotals"
+    exit
+fi
+
+curl -s https://bgpstuff.net/totals
