@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Checking origin ASN for given prefix
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $# -lt 1 ]] || [[ $1 = *h* ]]; then
+    echo "Run as: $(basename $0) <Prefix>"
+    echo "IPv4 or IPv6 prefix e.g., 'prefix-origin 8.8.8.8'"
+    exit
+fi
+
+prefix=$1
+curl -s https://bgpstuff.net/origin/$prefix
