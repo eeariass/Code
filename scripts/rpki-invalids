@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Checking RPKI INVALID prefixes from given ASN;
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $# -ne 1 ]] || [[ $1 = *h* ]]; then
+    echo "Run as: $(basename $0) <ASN> | --all"
+    echo "<ASN> e.g., "$(basename $0)" 15169"
+    echo "all e.g., "$(basename $0)" --all"
+    exit
+fi
+if [[ "$1" = *all* ]]; then
+    echo "Requesting RPKI INVALIDs from all ASNs"
+    curl -s "https://bgpstuff.net/invalids"
+else
+    echo "Requesting RPKI INVALIDs from AS$1"
+    curl -s "https://bgpstuff.net/invalids/$1"
+fi
