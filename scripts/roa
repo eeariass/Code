@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Checking ROA for given prefix
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $# -lt 1 ]] || [[ $1 = *h* ]]; then
+    echo "Run as: $(basename $0) <Prefix>"
+    echo "IPv4 or IPv6 prefix e.g., 'roa 103.21.244.0/24'"
+    exit
+fi
+
+prefix=$1
+curl -s https://bgpstuff.net/roa/$prefix
