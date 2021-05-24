@@ -10,4 +10,4 @@ if [[ $# -lt 1 ]] || [[ $1 = *h* ]]; then
 fi
 
 rfc=rfc$1
-curl -s https://www.rfc-editor.org/rfc/"$rfc.txt" >> rfc$1${txt}
+curl -s https://www.rfc-editor.org/rfc/"$rfc.txt" >> $HOME/rfc$1${txt}
