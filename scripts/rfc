@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This script grabs given RFC from RFC index and saves it in txt format
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $# -lt 1 ]] || [[ $1 = *h* ]]; then
+    echo "Run as: $(basename $0) <RFC#>"
+    echo "<RFC#> is the RFC number in question, e.g., 'rfc 4271'"
+    exit
+fi
+
+rfc=rfc$1
+curl -s https://www.rfc-editor.org/rfc/"$rfc.txt" >> rfc$1${txt}
