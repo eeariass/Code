@@ -9,6 +9,7 @@ You can check how to execute them with '-h' or '--help' options as:
 ./bgptotals - return total internet IPv4/v6 route count;
 ./roa - return whether the given IP has ROA or not;
 ./prefix-origin - return ASN where the BGP prefix is being originated from;
+./vrp - return VRPs from ASN;
 ```
 
 ```
