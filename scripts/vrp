@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Checking VRPs for given ASN
+# Author: Elvin Arias <eeariass@gmail.com>;
+
+if [[ $# -lt 1 ]] || [[ $1 = *h* ]]; then
+    echo "Run as: $(basename $0) <ASN"
+    echo "'vrp ASN'"
+    exit
+fi
+
+asn=$1
+curl -s https://bgpstuff.net/vrps/$asn | less
